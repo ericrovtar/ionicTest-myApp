@@ -15,8 +15,8 @@ export class AboutPage {
 	}
 
 	takePhoto() {
-		Camera.getPicture().then((imageData) => {
-			this.imageUrl = imageData
+		Camera.getPicture({ destinationType: Camera.DestinationType.FILE_URI }).then((imageData) => {
+			this.imageUrl = 'data:image/jpeg;base64,' + imageData;
 		}, (err) => {
 			this.error = err;
 			console.log(err);
