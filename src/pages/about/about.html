@@ -1,12 +1,14 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>
+			About
+		</ion-title>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <button ion-button color="dark" (click)="takePhoto()">Take Photo</button>
-    <img [src]="imageUrl" *ngIf="imageUrl" />
+	<h2>Photos</h2>
+	
+	<button ion-button color="dark" (click)="takePhoto()">Take Photo</button>
+	<img [src]="imageUrl" *ngIf="imageUrl" />
 </ion-content>
