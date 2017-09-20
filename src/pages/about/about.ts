@@ -8,6 +8,8 @@ import { Camera } from 'ionic-native';
 })
 export class AboutPage {
 	imageUrl;
+	error: string;
+
 	constructor(public navCtrl: NavController) {
 
 	}
@@ -16,6 +18,7 @@ export class AboutPage {
 		Camera.getPicture().then((imageData) => {
 			this.imageUrl = imageData
 		}, (err) => {
+			this.error = err;
 			console.log(err);
 		});
 	}
