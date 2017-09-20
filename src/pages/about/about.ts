@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Camera } from 'ionic-native';
+import { Camera, CameraOptions } from 'ionic-native';
 
 @Component({
 	selector: 'page-about',
@@ -15,8 +15,8 @@ export class AboutPage {
 	}
 
 	takePhoto() {
-		Camera.getPicture({ destinationType: Camera.DestinationType.FILE_URI }).then((imageData) => {
-			this.imageUrl = 'data:image/jpeg;base64,' + imageData;
+		Camera.getPicture().then((imageData) => {
+			this.imageUrl = imageData;
 		}, (err) => {
 			this.error = err;
 			console.log(err);
