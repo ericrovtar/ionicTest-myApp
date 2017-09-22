@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Camera, CameraOptions } from 'ionic-native';
+import { Camera } from 'ionic-native';
 
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser'
 
