@@ -40,6 +40,7 @@ export class AboutPage {
 
 			this.captureDataUrl = this.sanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,' + imageData);
 		}, (err) => {
+			this.error = err;			
 			console.log(err);
 		});
 	}
