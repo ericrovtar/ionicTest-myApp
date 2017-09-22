@@ -9,6 +9,7 @@
 <ion-content padding>
 	<h2>Photos</h2>
 	<button ion-button color="dark" (click)="takePhoto()">Take Photo</button>
+	<button ion-button color="dark" (click)="takePicture()">Take Picture</button>
 
 	<div>
 		<div><b>imageUrl</b></div>
@@ -20,5 +21,11 @@
 		<div>{{ error }}</div>
 	</div>
 
+	<h3>imageUrl</h3>
 	<img [src]="imageUrl" *ngIf="imageUrl" />
+
+	<h3>base64Image</h3>
+	<ion-img [src]="base64Image" *ngIf="base64Image"></ion-img>
+
+	<h3>Desanitize</h3>
 </ion-content>
