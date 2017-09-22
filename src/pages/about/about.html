@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
 	<ion-navbar>
 		<ion-title>
 			About
@@ -39,4 +39,18 @@
 	<h3>Desanitize</h3>
 	<div><b>captureDataUrl</b></div>	
 	<ion-img [src]="captureDataUrl" *ngIf="captureDataUrl"></ion-img>	
+</ion-content> -->
+
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			Ionic Camera Firebase
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<div style="display:flex; flex-direction:column;justify-content:center">
+		<button ion-button (click)="capture()">Lets take a picture!</button>
+		<img [src]="captureDataUrl" *ngIf="captureDataUrl"/>
+	</div>
 </ion-content>
