@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Camera, CameraOptions } from 'ionic-native';
 
-import { DomSanitizer } from '@angular/platform-browser'
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser'
 
 @Component({
 	selector: 'page-about',
@@ -11,7 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser'
 export class AboutPage {
 	imageUrl;
 	public base64Image: string;
-	captureDataUrl: string;
+	captureDataUrl: SafeUrl;
 	error: string;
 
 	constructor(
@@ -35,10 +35,10 @@ export class AboutPage {
 			targetWidth: 1000,
 			targetHeight: 1000
 		}).then((imageData) => {
-		  // imageData is a base64 encoded string
+		  	// imageData is a base64 encoded string
 			this.base64Image = "data:image/jpeg;base64," + imageData;
 
-			this.captureDataUrl = this.sanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,' + imageData)
+			this.captureDataUrl = this.sanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,' + imageData);
 		}, (err) => {
 			console.log(err);
 		});
